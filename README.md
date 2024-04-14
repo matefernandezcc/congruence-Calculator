@@ -1,5 +1,5 @@
 # [What is a Modular congruence equation?](https://www.intmath.com/blog/mathematics/how-to-solve-linear-congruences-12539)
-Exactly! modular arithmethic just like a clock.
+Exactly! modular arithmetic.
 
 Its a part of number theory, basically just an equation with the form Ax ≡ B (mod M)
 where '≡' mean congruent, for example 4 is congruent to 2 because 2|4 thus 4 is divisible by 2.
