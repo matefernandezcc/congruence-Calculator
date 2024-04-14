@@ -1,14 +1,14 @@
 #include "../include/main.h"
 
 int main(){
-    printf("Ingresar una ecuación de congruencia\n------------------------------------\n\nDe la forma:    Ax = B (mod M)\n\n------------------------------------\nIngresar los coeficientes A, B, M\n");
+    printf("Ingresar una ecuación de congruencia\n------------------------------------\n\nDe la forma:    Ax ≡ B (mod M)\n\n------------------------------------\nIngresar los coeficientes A, B, M\n");
 
     int congruencia[3];
     leerCoeficientes(congruencia);
     int A = congruencia[0];
     int B = congruencia[1];
     int M = congruencia[2];
-    printf("\n------------------------------------\nResolviendo: %dx = %d (mod %d)\n", A, B, M);
+    printf("\n------------------------------------\nResolviendo: %dx ≡ %d (mod %d)\n", A, B, M);
 
     // SolucionParametrica, es el conjunto de soluciones variando t desde (g, g-1)
     int g = gcdEuclides(A, M);
@@ -17,7 +17,7 @@ int main(){
     int newB = B/g;
     int newM = M/g;
     printf("\nX(t) = %ds + %dt (mod %d), t varia entre [%d,%d]\n", newB, newM, M, 0, g-1);
-    printf("\nPor teorema de fermat -> %ds = 1 (mod %d)\n", newA, newM);
+    printf("\nPor teorema de fermat -> %ds ≡ 1 (mod %d)\n", newA, newM);
 
     // Calculo de la combinacion lineal y de x0
     /** Ejemplo de como podria quedar el algoritmo, suponiendo la congruencia 78x = 84 (mod 102)
@@ -60,7 +60,7 @@ int main(){
     for(i=1;i<g;i++){
         conjSolucion[i] = conjSolucion[0] + newM*i;
     }
-    printf("\nLas %d soluciones de %dx = %d (mod %d) son\nX = {", g, A, B, M);
+    printf("\nLas %d soluciones de %dx ≡ %d (mod %d) son\nX = {", g, A, B, M);
     for (int j = 0; j < g; j++){
         if (j != 0) {
             printf(", ");
